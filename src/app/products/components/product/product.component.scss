@@ -1,3 +1,5 @@
+@import "../../../../assets/styles/mixin";
+
 .card {
   max-height: 450px;
   min-height: 450px;
@@ -11,6 +13,11 @@
     height: 200px;
     width: 200px;
     margin: auto;
+  }
+  .item-price
+  {
+    font-size: 18px;
+    font-weight: bold;
   }
   a {
     visibility: hidden;
@@ -36,5 +43,13 @@
   &:hover a {
     visibility: visible;
     z-index: 2;
+  }
+}
+// Media Query
+@include breakPoints(large-screen) {
+  .card {
+    a {
+      font-size: 14px;
+    }
   }
 }
