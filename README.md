@@ -15,4 +15,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. add some edition .
 2. using mixin in sass .
 --------------------------------------------------------------
-
+### for 'add product details' commit
+1. add product detalis with styling .
+2. using StarsPipe to convert rating to stars . 

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Product } from "../../product";
 
 @Component({
@@ -7,6 +8,7 @@ import { Product } from "../../product";
   styleUrls: ["./product.component.scss"],
 })
 export class ProductComponent implements OnInit {
+  constructor(private router:Router,private route:ActivatedRoute){}
   @Input() item: Product = {
     id: 0,
     title: "",
@@ -15,5 +17,11 @@ export class ProductComponent implements OnInit {
     description: "",
     image: "",
   };
+  @Input() id:number = 0;
   ngOnInit(): void {}
+
+  onNavigate()
+  {
+  this.router.navigate(['product',this.id],{relativeTo: this.route});
+  }
 }

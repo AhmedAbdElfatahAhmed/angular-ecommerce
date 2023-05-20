@@ -7,6 +7,7 @@ import { ProductComponent } from './components/product/product.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 import { SharedModule } from '../shared/shared.module';
 import { WordLimitPipe } from './word-limit.pipe';
+import { StarsPipe } from './stars.pipe';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { WordLimitPipe } from './word-limit.pipe';
     ProductsListComponent,
     ProductComponent,
     ProductDetailsComponent,
-    WordLimitPipe
+    WordLimitPipe,
+    StarsPipe
   ],
   imports: [
     CommonModule,

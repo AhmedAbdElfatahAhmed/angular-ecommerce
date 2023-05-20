@@ -14,7 +14,7 @@
   </div>
   <div class="row">
     <div class="col-md-6 col-lg-4" *ngFor="let product of products">
-    <app-product [item]="product"></app-product>
+    <app-product [item]="product" [id]="product.id"></app-product>
     </div>
   </div>
 </div>

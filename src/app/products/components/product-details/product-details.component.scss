@@ -1,0 +1,38 @@
+@import "../../../../assets/styles/_mixin";
+.card {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+  img {
+    width: 400px;
+    height: 400px;
+  }
+  .card-text,
+  .count {
+    font-size: 20px;
+  }
+}
+
+// Media Query
+@include breakPoints(medium-screen) {
+  .card {
+    flex-direction: column;
+  }
+}
+@include breakPoints(small-screen) {
+  .card {
+    flex-direction: column;
+  }
+}
+@include breakPoints(ExtraSmall-screen) {
+  .card {
+    flex-direction: column;
+    img {
+      width: 300px;
+      height: 300px;
+    }
+  }
+}
