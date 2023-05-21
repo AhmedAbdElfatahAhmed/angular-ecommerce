@@ -23,5 +23,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 1. using BehaviorSubject to subscribe on cart products and number of products.
 2. using localStorage to save data cart.
 3. using pipe in more than one module .
+--------------------------------------------------------------
+### for 'add Quantity to each product' commit
+1. can add product with Quantity from home page .
+2. can increase or decrease Quantity in cart page .
+3. calculate price in cart page .
+4. make new interface called ProductWithQuantity .
 
 

@@ -53,6 +53,10 @@
     visibility: visible;
     z-index: 2;
   }
+  .quantity input , .quantity button 
+  {
+    z-index: 2; 
+  }
 }
 // Media Query
 @include breakPoints(large-screen) {

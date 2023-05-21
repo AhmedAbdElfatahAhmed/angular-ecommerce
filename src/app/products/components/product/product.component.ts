@@ -19,7 +19,10 @@ export class ProductComponent implements OnInit {
     image: "",
   };
   @Input() id:number = 0;
-  ngOnInit(): void {}
+  isQuantityAdded:boolean = false;
+  quantity:any = null;
+  ngOnInit(): void {
+  }
 
   onNavigate()
   {
@@ -28,6 +31,7 @@ export class ProductComponent implements OnInit {
 
   onAddToCart(product:Product)
   {
-  this.cartService.addtoCart(product);
+  this.cartService.addtoCart(product,this.quantity);
+  this.isQuantityAdded = false;
   }
 }
