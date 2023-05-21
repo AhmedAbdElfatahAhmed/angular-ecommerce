@@ -13,7 +13,6 @@ export class AppComponent implements OnInit {
 
   showFooter(): boolean {
     if (
-      this.router.url.includes("cart") ||
       this.router.url.includes("product/")
     ) {
       return true;

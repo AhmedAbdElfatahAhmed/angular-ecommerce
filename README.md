@@ -18,3 +18,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ### for 'add product details' commit
 1. add product detalis with styling .
 2. using StarsPipe to convert rating to stars . 
+--------------------------------------------------------------
+### for 'add shopping cart implementation' commit
+1. using BehaviorSubject to subscribe on cart products and number of products.
+2. using localStorage to save data cart.
+3. using pipe in more than one module .
+
+

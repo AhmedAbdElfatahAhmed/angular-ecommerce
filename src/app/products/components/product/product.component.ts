@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Product } from "../../product";
+import { CartService } from './../../../feature/cart.service';
 
 @Component({
   selector: "app-product",
@@ -8,7 +9,7 @@ import { Product } from "../../product";
   styleUrls: ["./product.component.scss"],
 })
 export class ProductComponent implements OnInit {
-  constructor(private router:Router,private route:ActivatedRoute){}
+  constructor(private router:Router,private route:ActivatedRoute,private cartService:CartService){}
   @Input() item: Product = {
     id: 0,
     title: "",
@@ -23,5 +24,10 @@ export class ProductComponent implements OnInit {
   onNavigate()
   {
   this.router.navigate(['product',this.id],{relativeTo: this.route});
+  }
+
+  onAddToCart(product:Product)
+  {
+  this.cartService.addtoCart(product);
   }
 }

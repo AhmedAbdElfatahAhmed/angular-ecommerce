@@ -1,0 +1,15 @@
+.container
+{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 10px;
+}
+td,.counter
+{
+  line-height: 50px;
+}
+span.increase,span.decrease
+{
+ cursor: pointer;
+ padding: 5px 10px;
+ font-weight: bold;
+}

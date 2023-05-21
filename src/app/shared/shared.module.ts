@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
+import { WordLimitPipe } from './word-limit.pipe';
 
 
 
@@ -11,7 +12,8 @@ import { RouterModule } from '@angular/router';
   declarations: [
     HeaderComponent,
     SpinnerComponent,
-    FooterComponent
+    FooterComponent,
+    WordLimitPipe,
   ],
   imports: [
     CommonModule,
@@ -20,7 +22,8 @@ import { RouterModule } from '@angular/router';
   exports:[
     HeaderComponent,
     SpinnerComponent,
-    FooterComponent
+    FooterComponent,
+    WordLimitPipe,
   ]
 })
 export class SharedModule { }
