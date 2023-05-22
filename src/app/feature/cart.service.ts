@@ -30,10 +30,26 @@ export class CartService {
     if (exisiting) {
       alert("exist");
     } else {
-      cart.push(productWithQuantity);
-      localStorage.setItem("cart", JSON.stringify(cart));
-      this.cartProductNO.next(cart.length);
-      this.cartProductsSubj.next(cart);
+      const newCart = [...cart,productWithQuantity];
+      localStorage.setItem("cart", JSON.stringify(newCart));
+      this.cartProductNO.next(newCart.length);
+      this.cartProductsSubj.next(newCart);
     }
   }
+
+  deleteProductFromCart(id: number) {
+    const updatedCart = this.getCart().filter(item => item.product.id
+      !==id);
+    this.cartProductsSubj.next(updatedCart);
+    this.cartProductNO.next(updatedCart.length);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  }
+
+  clearAllCart()
+  {
+    this.cartProductsSubj.next([]);
+    this.cartProductNO.next(0);
+    localStorage.removeItem('cart');
+  }
+
 }

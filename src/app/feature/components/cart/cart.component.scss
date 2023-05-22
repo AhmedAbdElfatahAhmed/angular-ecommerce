@@ -1,15 +1,105 @@
-.container
-{
+@import "../../../../assets/styles/mixin";
+
+table {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 10px;
+  img {
+    width: 50px;
+    height: 50px;
+  }
+  td,
+  .counter {
+    line-height: 50px;
+  }
+  span.increase,
+  span.decrease {
+    cursor: pointer;
+    padding: 5px 10px;
+    font-weight: bold;
+    user-select: none;
+  }
+  .quantity {
+    width: 10px;
+    margin: 0 25px;
+    user-select: none;
+  }
 }
-td,.counter
-{
-  line-height: 50px;
+
+.cart-empty {
+  i {
+    font-size: 10rem;
+  }
 }
-span.increase,span.decrease
-{
- cursor: pointer;
- padding: 5px 10px;
- font-weight: bold;
+
+// Media Query
+@include breakPoints(medium-screen) {
+  table {
+    font-size: 14px;
+    td,
+    .counter {
+      line-height: 20px;
+    }
+    span.increase,
+    span.decrease {
+      padding: 1px 3px;
+    }
+    .quantity {
+      margin: 0 12px;
+    }
+  }
+}
+
+@include breakPoints(small-screen) {
+  table {
+    font-size: 12px;
+    font-weight: bold;
+    img {
+      width: 30px;
+      height: 30px;
+    }
+    td,
+    .counter {
+      line-height: 20px;
+    }
+    span.increase,
+    span.decrease {
+      padding: 1px 3px;
+    }
+    .quantity {
+      margin: 0 8px;
+    }
+  }
+}
+
+@include breakPoints(ExtraSmall-screen) {
+  .info {
+    h3 {
+      font-size: 18px;
+    }
+    button {
+      font-size: 14px;
+    }
+  }
+  table {
+    font-size: 12px;
+    font-weight: bold;
+    img {
+      width: 25px;
+      height: 25px;
+    }
+    td,
+    .counter {
+      line-height: 15px;
+    }
+    span.increase,
+    span.decrease {
+      padding: 1px 2px;
+    }
+    .quantity {
+      margin: 0 6px;
+    }
+  }
+  .total-price h3 {
+    font-size: 14px;
+  }
 }

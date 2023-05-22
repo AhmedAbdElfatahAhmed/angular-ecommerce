@@ -1,5 +1,11 @@
-<div class="container mb-3">
-<div class="row">
+<div class="container mb-3 pt-3">
+<div class="row" *ngIf="products.length">
+  <div class="col-md-12">
+    <div class="info d-flex justify-content-between align-items-center mb-5">
+      <h3 class="text-primary">You have {{products.length}} products in your cart</h3>
+      <button (click)="clearAll()" class="btn btn-danger">Clear All Cart</button>
+    </div>
+  </div>
   <div class="col-md-12">
     <table class="table table-striped text-center">
       <thead>
@@ -19,7 +25,6 @@
           <td>
             <img
               [src]="item.product.image"
-              style="width: 50px; height: 50px"
               alt="{{ item.product.title }}"
             />
           </td>
@@ -27,17 +32,23 @@
           <td>{{ item.product.price }} EGP</td>
           <td >
             <span (click)="increaseQun(i)" class="increase text-white bg-secondary rounded-2">+</span>
-            <span class="mx-5 d-inline-block" style="width:30px ;">{{item.Quantity}}</span>
+            <span class="quantity d-inline-block">{{item.Quantity}}</span>
             <span (click)="decreaseQun(i)" class="decrease text-white bg-secondary rounded-2">-</span> 
           </td>
           <td>{{ (item.product.price * item.Quantity).toFixed(3) }} EGP</td>
-          <td class="text-danger" style="cursor:pointer"><i class="fa-solid fa-trash-can"></i></td>
+          <td class="text-danger" style="cursor:pointer"><i class="fa-solid fa-trash-can" (click)="onDelete(item.product.id)"></i></td>
         </tr>
       </tbody>
     </table>
-  </div>
-  <div class="total-price">
-    <h3 class="text-end text-primary">Total : {{calTotalPrice().toFixed(3)}} EGP</h3>
+    <div class="total-price">
+      <h3 class="text-end text-primary">Total : {{calTotalPrice().toFixed(3)}} EGP</h3>
+    </div>
   </div>
 </div>
 </div>
+
+<div class="cart-empty text-center text-primary mt-5 pt-5" *ngIf="!products.length">
+  <h2 class="mb-5">Cart is Empty</h2>
+  <i class="fa fa-shopping-cart"></i>
+</div>
+

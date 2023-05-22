@@ -29,5 +29,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 2. can increase or decrease Quantity in cart page .
 3. calculate price in cart page .
 4. make new interface called ProductWithQuantity .
-
+--------------------------------------------------------------
+### for 'implement remove product from cart' commit
+1. fix issue when add product to cart .
+2. can remove product from cart  .
+3. responsive table in cart .
+4. can accept only positive number by html .
 
