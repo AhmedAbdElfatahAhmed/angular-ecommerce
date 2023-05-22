@@ -10,6 +10,7 @@ import { Product } from "../../product";
 export class ProductsListComponent implements OnInit {
   products: Product[] = [];
   categories: string[] = [];
+  filteredTitle:string = '';
   constructor(private productsService: ProductsService) {}
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe({

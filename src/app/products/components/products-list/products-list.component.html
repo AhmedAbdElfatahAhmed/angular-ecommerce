@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row mb-4">
     <div class="offset-md-3 col-md-3 mb-3">
-      <input class="form-control" type="search" placeholder="Search" />
+      <input [(ngModel)]="filteredTitle" class="form-control" type="search" placeholder="Search by title" />
     </div>
     <div class="col-md-2">
       <select #selectedOption (change)="onOptionSelected(selectedOption)" class="form-select">
@@ -11,7 +11,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-6 col-lg-4" *ngFor="let product of products">
+    <div class="col-md-6 col-lg-4" *ngFor="let product of products |filter:filteredTitle">
     <app-product [item]="product" [id]="product.id"></app-product>
     </div>
   </div>

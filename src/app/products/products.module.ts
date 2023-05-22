@@ -8,6 +8,7 @@ import { ProductDetailsComponent } from './components/product-details/product-de
 import { SharedModule } from '../shared/shared.module';
 import { StarsPipe } from './stars.pipe';
 import { FormsModule } from '@angular/forms';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     ProductsListComponent,
     ProductComponent,
     ProductDetailsComponent,
-    StarsPipe
+    StarsPipe,
+    FilterPipe
   ],
   imports: [
     CommonModule,
