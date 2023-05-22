@@ -19,4 +19,14 @@ export class ProductsService {
   {
     return this.http.get<Product>(`${environment.apiUrl}/products/${id}`)
   }
+
+  getAllCategories() {
+    return this.http.get<string[]>(`${environment.apiUrl}/products/categories`);
+  }
+
+  getProductsByCategory(categorySelected: string) {
+    return this.http.get<Product[]>(
+      `${environment.apiUrl}/products/category/${categorySelected}`
+    );
+  }
 }

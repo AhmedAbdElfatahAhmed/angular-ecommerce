@@ -4,11 +4,9 @@
       <input class="form-control" type="search" placeholder="Search" />
     </div>
     <div class="col-md-2">
-      <select class="form-select">
+      <select #selectedOption (change)="onOptionSelected(selectedOption)" class="form-select">
         <option selected>All Categories</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
+        <option [value]='category' *ngFor="let category of categories">{{category}}</option>
       </select>
     </div>
   </div>
