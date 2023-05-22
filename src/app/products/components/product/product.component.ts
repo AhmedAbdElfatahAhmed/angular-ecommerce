@@ -31,7 +31,10 @@ export class ProductComponent implements OnInit {
 
   onAddToCart(product:Product)
   {
-  this.cartService.addtoCart(product,this.quantity);
-  this.isQuantityAdded = false;
+  if(this.quantity)
+  {
+    this.cartService.addtoCart(product,this.quantity);
+    this.isQuantityAdded = false;
+  }
   }
 }

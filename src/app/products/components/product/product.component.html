@@ -8,7 +8,7 @@
       <a *ngIf="!isQuantityAdded" (click)="isQuantityAdded=true" class="btn btn-primary text-white"> <i class="fa fa-shopping-cart me-1"></i> add to cart</a>
       <div *ngIf="isQuantityAdded" class="quantity d-flex justify-content-center">
        <input type="number" min="1" [(ngModel)]="quantity" placeholder="Quantity" class="form-control me-2" style="width: 30%">
-       <button class="btn btn-primary" (click)="onAddToCart(item)">Add</button>
+       <button [disabled]="!quantity" class="btn btn-primary" (click)="onAddToCart(item)">Add</button>
       </div>
     </div>
 </div>
