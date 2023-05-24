@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkangular_ecommerce=self.webpackChunkangular_ecommerce||[]).push([[592],{695:(s,u,n)=>{n.d(u,{v:()=>c});var a=n(8256);let c=(()=>{class e{transform(r,i){let t=r.split(" ");return t.length>i?(t=t.slice(0,i),t.join(" ")+" ....."):r}}return e.\u0275fac=function(r){return new(r||e)},e.\u0275pipe=a.Yjl({name:"wordLimit",type:e,pure:!0}),e})()}}]);
