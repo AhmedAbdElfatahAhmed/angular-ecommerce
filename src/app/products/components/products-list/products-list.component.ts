@@ -1,6 +1,7 @@
 import { ProductsService } from "./../../products.service";
 import { Component, OnInit } from "@angular/core";
 import { Product } from "../../product";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-products-list",
@@ -11,11 +12,15 @@ export class ProductsListComponent implements OnInit {
   products: Product[] = [];
   categories: string[] = [];
   filteredTitle:string = '';
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService,private toastr: ToastrService) {}
   ngOnInit(): void {
     this.productsService.getAllProducts().subscribe({
       next: (res) => (this.products = res),
-      error: (err) => console.log("error", err.message),
+      error: (err) => {
+      this.toastr.error(err.message, 'Error', {
+        timeOut: 5000,
+      });
+    },
     });
    if(!this.categories.length)
    {
@@ -34,7 +39,9 @@ export class ProductsListComponent implements OnInit {
    else{
     this.productsService.getProductsByCategory(category).subscribe({
       next: (res) => (this.products = res),
-      error: (err) => console.log("error", err.message),
+      error: (err) => this.toastr.error(err.message, 'Error', {
+        timeOut: 5000,
+      })
     });
    }
   }

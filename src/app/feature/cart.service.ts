@@ -2,6 +2,7 @@ import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 import { Product } from "../products/product";
 import { ProductWithQuantity } from "../products/productWithQuantity";
+import { ToastrService } from "ngx-toastr";
 
 @Injectable({
   providedIn: "root",
@@ -10,7 +11,7 @@ export class CartService {
   cartProductsSubj = new BehaviorSubject<ProductWithQuantity[]>([]);
   cartProductNO = new BehaviorSubject<number>(0);
   cartLocalStorage = localStorage.getItem("cart");
-  constructor() {
+  constructor(private toastr: ToastrService) {
     if (this.cartLocalStorage) {
       const cartData = JSON.parse(this.cartLocalStorage);
       this.cartProductsSubj.next(cartData);
@@ -28,12 +29,17 @@ export class CartService {
     const cart = this.getCart();
     const exisiting = cart.find((item) => item?.product?.id === product.id);
     if (exisiting) {
-      alert("exist");
+      this.toastr.info('this product is already added', 'Info', {
+        timeOut: 2000,
+      });
     } else {
       const newCart = [...cart,productWithQuantity];
       localStorage.setItem("cart", JSON.stringify(newCart));
       this.cartProductNO.next(newCart.length);
-      this.cartProductsSubj.next(newCart);
+      this.cartProductsSubj.next(newCart);    
+      this.toastr.success('this product added successfully', 'Success',{
+        timeOut: 2000,
+      });
     }
   }
 
